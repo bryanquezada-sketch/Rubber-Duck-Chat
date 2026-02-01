@@ -1,0 +1,98 @@
+ROGERIAN RUBBER DUCK DESIGN ONE PAGER
+
+[PICTURE OF GAME COVER]
+
+{TAGLINE} Ex: Never get stuck again! Become a code ninja and slash away those bugs with the help of Alan Tur-wing! This Waddle-Warrior will teach all the Duck-Jitsu you need to master to tackle on your latest coding project! 
+
+Features include:
+Unconditional Positive Re-quack – A play on Rogers' core concept of "Unconditional Positive Regard."
+The Fully Functioning Duck – For a duck that has achieved its highest "person-centered" potential.
+Client-Centered Quacker – Reflecting Rogers' "Client-Centered Therapy."
+Empathic Listener – Ideal for a duck you talk to when you need to feel heard.
+
+
+High Level 
+A duck widget that overlays on the screen or can be talked to work through coding problems. It uses Rogerian Psychology to enable the user to solve coding problems by tapping into his own hidden potential. It's also adorably hilarious.
+
+
+
+
+
+Platform: Browser
+Engine: Phaser
+Genre: Web App
+Release Date: Feb 1, 2026(but probably later)
+
+Product Objectives
+
+  GOALS
+  - A Personal Talk-Through Machine - Will help me talk to myself talking about code without looking too crazy!
+  - Hope that if other people download it, they will find it helpful or at least humorous..
+
+  FEATURES
+  - Duck that Quacks on Click
+  - Chatbox that takes User Input
+  - Duck that responds to user Input in a Rogerian way (Use Elizabot code)
+
+  OPTIONAL FEATURES(ADD THESE WAY DOWN THE LINE IF AT ALL): 
+  - Quacks as he responds
+    Animal Crossing SFX or series of quacks (Maybe retro quacks since he's a sprite)
+  - Chat History
+  - Button to... 
+    Have duck effects to keep you awake 
+    Inspire with random quotes
+    Motivate with random quotes
+  - Diorama of duck in natural environment...or a computer desk coding away until you interrupt him!
+    Maybe he somtimes just mills about or has other animations if he's idle
+  - Drag and Drop treats for duck
+    Change between sandwhiches and cakes to seeds and grass or bread and peas
+  - Flappy duck
+    Except it's reversed he's swimming over water, bobbing for fish/algae(hold click down)
+    Alternatively ninja duck game to keep with the ninja theme(probably not)
+    Scuba suit/Snorkel
+  -Unlockable skins
+    On milestones or holidays or hidden features/secret passwords (like words from twitter posts or saying famous phrases or clicking the duck enough times or getting a high score in Flappy Duck or clicking somewhere unexpected or feeding duck enough times or leaving him idle long enough, etc.)
+
+Gameplay Pillars
+  Input Chat...
+  Response...
+  ???
+  Quack!
+
+Narrative
+  A Web-Foot Developer that specializes in front-end floating, Senesei Squeek is the wisest of all the bath toy collectibles! 
+
+Visuals
+  Duck. It's Yellow probably. Texture and design implies high levels of bouyancy.
+
+  Target Market
+  Age: Anyone old enough to type.
+
+  Gender:
+  Those who identify as coding quacks.
+
+  Profession: 
+  Coders
+
+  Values: 
+  Getting shit done!
+
+  How to Find Them:
+  Probably in some dark dank basement or office.
+
+  How will you Serve Their Needs?:
+  Unlike other Elizabot ripoffs, mine has a literal rubber duck that talks.
+
+  More:
+  Hopefully not apprehensive to bathtime!
+
+Highlighted Competitors
+  It's just Elizabot under a duck skin.
+
+
+
+
+
+
+Timeline
+A week probably. Duck. Quacks. Chatbox Visuals. Chatbox Input. Chatbox Logging. Duck Responses. Animations. Extra bullshit.
