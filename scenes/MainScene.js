@@ -1,11 +1,13 @@
-//    console.log(this);
+const { Phaser } = window; // This bridges the gap for modules
 
-class MainScene extends Phaser.Scene {
+export class MainScene extends Phaser.Scene {
   constructor() {
     super({ key: "MainScene" });
   }
 
-  init() {}
+  init() {
+
+  }
 
   preload() {
     this.load.image("duck", "https://i.imghippo.com/files/QopU3501uss.png");
