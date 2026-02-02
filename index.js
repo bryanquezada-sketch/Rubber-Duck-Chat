@@ -5,7 +5,7 @@ window.PHSR_GAME = new Phaser.Game({
   type: Phaser.AUTO,
   pixelArt: true,
   width: 150,
-  height: 300,
+  height: 150,
   parent: "game-container",
   scene: [MainScene, UIScene],
   physics: {

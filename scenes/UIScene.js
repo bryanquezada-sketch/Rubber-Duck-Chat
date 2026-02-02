@@ -20,7 +20,7 @@ export default class UIScene extends Phaser.Scene {
     
     const userText = this.add.text(15, 270, "", {
     //  wordWrap: {width: 129, useAdvancedWrap: true},
-      backgroundColor: '#ff0000'
+    //  backgroundColor: '#ff0000'
     });
 
 
@@ -32,7 +32,7 @@ export default class UIScene extends Phaser.Scene {
     let chatLog = [];
     
     const chatLogText = this.add.text(15, 145, chatLog, {
-      backgroundColor: '#008080',
+     // backgroundColor: '#008080',
       fontSize: '10px',
       wordWrap: {width: 124, useAdvancedWrap: true},
       metrics: {
@@ -42,7 +42,7 @@ export default class UIScene extends Phaser.Scene {
       }
     });
 
-    let duckBrain = ["Quack...", "Quack!", "Quack?", "Got any grapes?", "*Quacks Pensively*"]
+    let duckBrain = ["Quack...", "Quack!", "Quack?", "Quaquack", "", "Got any grapes?", "*Quacks Pensively*"]
     let duckIntro = "Alan: What's quackin'?";
     let userMessage = '';
 
@@ -68,15 +68,19 @@ export default class UIScene extends Phaser.Scene {
             });
         } else if (keyboardData.key.length === 1) {
           userMessage += keyboardData.key;
-          userText.setText(userMessage);
-          if (userText.width > 120) {
-            userText.setOrigin(1, 0);
-            userText.x = 140;
-          } else {
-            userText.setOrigin(0, 0);
-            userText.x = 15;
-          }
         }
+
+        userText.setText(userMessage);
+
+
+        if (userText.width > 120) {
+          userText.setOrigin(1, 0);
+          userText.x = 140;
+        } else {
+          userText.setOrigin(0, 0);
+          userText.x = 15;
+        }
+        
 
       
       //console.log(`${keyboardData.key} was pressed`);
