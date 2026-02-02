@@ -6,7 +6,8 @@
     "start": "http-server . -p 3000 -c-1"
   },
   "dependencies": {
+    "http-server": "latest",
     "phaser": "latest",
-    "http-server": "latest"
+    "phaser3-rex-plugins": "^1.80.18"
   }
 }
