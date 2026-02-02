@@ -1,0 +1,34 @@
+That is the spirit! Here is a classic "Cooldown" scenario that uses the exact same logic principles you just learned.
+The Scenario: The Magic Wand
+You are building a game where a player clicks a Wand to cast a spell.
+When clicked, the Wand spawns a Sparkle (an image).
+The Sparkle must stay on screen for 2 seconds and then be destroyed.
+The Rule: The player cannot cast a new Sparkle if one is already on the screen.
+The Challenge
+I have provided the "broken" version of the code below. It has the Scope and Logic errors we discussed.
+How would you rewrite this to make it work? (You can just explain the steps or write the snippet).
+javascript
+// BROKEN CODE 
+create() {
+  const wand = this.add.sprite(100, 100, 'wand').setInteractive();
+
+  wand.on('pointerdown', () => {
+    // ERROR: This will crash on the first click because sparkle is unknown
+    // ERROR: This variable is scoped to this function and "dies" after the click
+    if (sparkle.active) { 
+      return; // Stop the function if sparkle exists
+    }
+
+    const sparkle = this.add.image(200, 200, 'sparkle');
+
+    this.time.delayedCall(2000, () => {
+      sparkle.destroy();
+    });
+  });
+}
+Use code with caution.
+
+Think about:
+Where does the sparkle variable need to be declared so it doesn't "die"?
+What should you do inside the delayedCall to "unlock" the wand for the next click?
+How would you fix it?
