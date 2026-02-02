@@ -4,7 +4,7 @@ export default class UIScene extends Phaser.Scene {
   }
 
   create() {
-    const chatBox = new Phaser.Geom.Rectangle(10, 140, 130, 130);
+    const chatBox = new Phaser.Geom.Rectangle(10, 140, 130, 120);
     const chatBoxGraphics = this.add.graphics({
       lineStyle: { width: 2, color: 0x00ff00 },
     });
@@ -15,10 +15,10 @@ export default class UIScene extends Phaser.Scene {
     const textInputFieldGraphics = this.add.graphics({
       lineStyle: { width: 2, color: 0x9D00FF },
     });
-    textInputFieldGraphics.strokeRectShape(textInputField);
+//    textInputFieldGraphics.strokeRectShape(textInputField);
 
     
-    const displayText = this.add.text(15, 270, "", {
+    const userText = this.add.text(15, 270, "", {
       wordWrap: {width: 129, useAdvancedWrap: true},
       backgroundColor: '#ff0000'
     });
@@ -26,10 +26,10 @@ export default class UIScene extends Phaser.Scene {
 
     let chatLog = [];
     
-    const chatLogText = this.add.text(15, 150, chatLog, {
+    const chatLogText = this.add.text(15, 145, chatLog, {
       backgroundColor: '#008080',
       fontSize: '10px',
-      wordWrap: {width: 129, useAdvancedWrap: true}
+      wordWrap: {width: 124, useAdvancedWrap: true}
     });
 
     let duckBrain = ["Quack...", "Quack!", "Quack?", "Got any grapes?", "*Quacks Pensively*"]
@@ -49,23 +49,26 @@ export default class UIScene extends Phaser.Scene {
           userMessage = "";
           chatLogText.setText(chatLog.join("\n"));
           this.time.delayedCall(1000, () => {
-          const randomQuack = duckBrain[Math.floor(Math.random() * duckBrain.length)];
-          chatLog.push("Alan: " + randomQuack),
-          chatLogText.setText(chatLog.join("\n"));
-          });
-          if (chatLog.length > 5) {
-            
-          }
+            const randomQuack = duckBrain[Math.floor(Math.random() * duckBrain.length)];
+            chatLog.push("Alan: " + randomQuack),
+            chatLogText.setText(chatLog.join("\n"));
+            });
+            this.trimChat(chatLog, chatLogText, chatBox);
         } else if (keyboardData.key.length === 1)
           userMessage += keyboardData.key;
-      displayText.setText(userMessage);
+          userText.setText(userMessage);
 
       
       //console.log(`${keyboardData.key} was pressed`);
       //console.log(`${keyboardData.key} was pressed`);
     });
-
-
-    
   }
+
+  trimChat(log, display, box) {
+    while (display.height > box.height) {
+      log.shift();
+      display.setText(log.join("\n"));
+    }
+  }
+
 }
