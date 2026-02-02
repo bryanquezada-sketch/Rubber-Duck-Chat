@@ -42,8 +42,7 @@ export default class UIScene extends Phaser.Scene {
       }
     });
 
-
-    let duckBrain = ["Don't Repeat Yourself!", "Keep Data and Visuals separate!", "KISS", "Does this function do only ONE thing?", "YAGNI", "Use descriptive variable names!", "Google is a tool, not a cheat code. Use it!", "Focus on logic, not just syntax.", "Read the error message. It's trying to help!", "Plan your logic before you type a single line.", "Stuck? Build a tiny 'toy' version of the problem."];
+    let duckBrain = ["Quack...", "Quack!", "Quack?", "Quaquack", "", "Got any grapes?", "*Quacks Pensively*"]
     let duckIntro = "Alan: What's quackin'?";
     let userMessage = '';
 

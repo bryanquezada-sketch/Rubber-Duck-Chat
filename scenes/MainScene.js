@@ -19,7 +19,7 @@ export class MainScene extends Phaser.Scene {
   }
 
   create() {
-    const duck = this.add.sprite(75, 80, "duck").setInteractive();
+    const duck = this.add.sprite(75, 75, "duck").setInteractive();
     let duckIsActive = false;
 
     console.log(duckIsActive);
@@ -29,39 +29,7 @@ export class MainScene extends Phaser.Scene {
     let speechObject = null;
 
 
-    const duckQuotesArray = [
-    "Did you check for a missing [b]semicolon?[/b]", 
-    "Is the [b]variable[/b] name spelled correctly?", 
-    "Try [u]explaining[/u] the logic out loud to me again.", 
-    "Have you tried turning it off and on again?",
-    "What does the error [i]actually[/i] say?",
-    "Is that function doing too many things?",
-    "Explain the logic to me.",
-    "Did you check the [b]syntax?[/b]",
-    "Try [b]console.log()![/b]",
-    "Is it a [i]typo[/i]?",
-    "Walk me through it.",
-    "Breathe. The code isn't sentient. (Or am I?)",
-    "Take a 5-minute walk. I’ll be here.",
-    "Google is a [i][b]tool[/i][/b], not a cheat code. Use it!",
-    "Small steps lead to big apps. Keep waddling!",
-    "Don't overthink it. [b]KISS[/b]: Keep It Simple, Student!",
-    "Try writing the logic in plain English first.",
-    "Drink some water.",
-    "Save your progress!",
-    "Step away for 5 mins.",
-    "Check your brackets.",
-    "Time for a stretch?",
-    "Break it down.",
-    "One line at a time.",
-    "Don't let it ruffle your feathers!",
-    "I’m here for the bugs. And the breadcrumbs.",
-
-
-
-
-
-    ];
+    const duckQuotesArray = ["Don't Repeat Yourself!", "Keep Data and Visuals separate!", "KISS", "Does this function do only ONE thing?", "YAGNI", "Use descriptive variable names!", "Google is a tool, not a cheat code. Use it!", "Focus on logic, not just syntax.", "Read the error message. It's trying to help!", "Plan your logic before you type a single line.", "Stuck? Build a tiny 'toy' version of the problem."];
 
     duck.on("pointerdown", (pointer) => {
       if (pointer.button === 0){
@@ -71,26 +39,14 @@ export class MainScene extends Phaser.Scene {
           duck.clearTint();
         });
 
-        if (speechObject === null) {
-          this.scale.resize(150, 200); 
-          duck.y = 140;
+        if (speechObject === null) {     
           const randomDuckSpeech = duckQuotesArray[Math.floor(Math.random() * duckQuotesArray.length)];
-          speechObject = this.add.rexBBCodeText(10, 5, randomDuckSpeech, {
-            wordWrap: {width: 145, useAdvancedWrap: true},
-            backgroundColor: '#ffffff',
-            align: 'center',
-            color: '#000000',
-            fontFamily: 'Arial',
-            fontSize: '16px'
-
-          });
+          speechObject = this.add.text(5, 130, randomDuckSpeech);
           
           this.time.delayedCall(3000, () => {
             if (speechObject) {
               speechObject.destroy();
               speechObject = null;
-              this.scale.resize(150, 150); 
-              duck.y = 80;
             }
           });
         }
@@ -103,12 +59,10 @@ export class MainScene extends Phaser.Scene {
       duckIsActive = true;
       duck.setTint(0xff0000);
 
-      //scales canvas
       this.scale.resize(150, 300);
 
       this.time.delayedCall(150, () => {
         duck.clearTint();
-        duck.y = 80;
       });
     }
 
