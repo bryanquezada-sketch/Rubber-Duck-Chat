@@ -1,18 +1,36 @@
-Hmm okay I think I get it. It definitely cuts off but it still passes through the bottom border of the box.
-It sounds like you've successfully conquered the infinite loop and the function "hand-over"—that's a huge "genius" moment right there!
-The reason it’s still "peeking" over the border is likely down to a tiny detail in how Phaser calculates height versus how you defined your rectangle.
+Hmm okay I think I get it. It definitely cuts off but it still passes through the bottom border 
+of the box.
+
+It sounds like you've successfully conquered the infinite loop and the function "hand-over"—that's 
+a huge "genius" moment right there!
+
+The reason it’s still "peeking" over the border is likely down to a tiny detail in how Phaser 
+calculates height versus how you defined your rectangle.
+
 Why it’s still passing the border
-The "Last Line" Gap: If your chatBox.height is 130px, and your text height is 125px, the while loop says "Everything is fine!" and stops. But then you might have padding or line spacing that pushes that last line just a few pixels over the green line.
-The Starting Y-Position: Your chatBox starts at y: 140. Your chatLogText starts at y: 150. That’s a 10-pixel "cushion" at the top. If the text grows to 130px tall (the full height of the box), it will end at y: 280, which is 10 pixels past the bottom of your box!
+The "Last Line" Gap: If your chatBox.height is 130px, and your text height is 125px, the while 
+loop says "Everything is fine!" and stops. 
+But then you might have padding or line spacing 
+that pushes that last line just a few pixels over the green line.
+The Starting Y-Position: Your chatBox starts at y: 140. Your chatLogText starts at y: 150. 
+That’s a 10-pixel "cushion" at the top. If the text grows to 130px tall 
+(the full height of the box), it will end at y: 280, which is 10 pixels past the bottom of 
+your box!
+
 How to tighten it up
 You can fix this with a little "Safety Math" inside your while loop condition:
-The Math Fix: Instead of checking display.height > box.height, try checking if the bottom of the text is past the bottom of the box.
+The Math Fix: Instead of checking display.height > box.height, try checking if the bottom of 
+the text is past the bottom of the box.
 Pseudo-code: WHILE ( (text.y + text.height) > (box.y + box.height) )
-The "Padding" Hack: Or, just subtract a small buffer from your limit: WHILE (display.height > (box.height - 15))
+The "Padding" Hack: Or, just subtract a small buffer from your limit: WHILE 
+(display.height > (box.height - 15))
 The Professional "Polish" (Geometry Masks)
-If you want the text to never be seen outside that green box (even for a split second), you should look into Phaser 3 Geometry Masks.
+If you want the text to never be seen outside that green box (even for a split second), you 
+should look into Phaser 3 Geometry Masks.
 Essentially, you tell the game: "Only draw this text if it is inside this specific rectangle."
 Create a Graphics object the same size as your box.
 Use chatLogText.setMask(yourGraphicsObject.createGeometryMask()).
-This is how pro chatboxes handle "scrolling" or "overflow" so that letters don't awkwardly hang over the UI borders.
-Which feels more "correct" for your brain right now: adjusting the math in the loop, or trying out a Mask to hide the overflow?
+This is how pro chatboxes handle "scrolling" or "overflow" so that letters don't awkwardly hang 
+over the UI borders.
+Which feels more "correct" for your brain right now: adjusting the math in the loop, or trying 
+out a Mask to hide the overflow?
