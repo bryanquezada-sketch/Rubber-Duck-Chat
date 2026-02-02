@@ -29,7 +29,7 @@ export class MainScene extends Phaser.Scene {
     let speechObject = null;
 
 
-    const duckQuotesArray = ["msg1", "msg2", "msg3"];
+    const duckQuotesArray = ["Don't Repeat Yourself!", "Keep Data and Visuals separate!", "KISS", "Does this function do only ONE thing?", "YAGNI", "Use descriptive variable names!", "Google is a tool, not a cheat code. Use it!", "Focus on logic, not just syntax.", "Read the error message. It's trying to help!", "Plan your logic before you type a single line.", "Stuck? Build a tiny 'toy' version of the problem."];
 
     duck.on("pointerdown", (pointer) => {
       if (pointer.button === 0){
@@ -41,7 +41,7 @@ export class MainScene extends Phaser.Scene {
 
         if (speechObject === null) {     
           const randomDuckSpeech = duckQuotesArray[Math.floor(Math.random() * duckQuotesArray.length)];
-          speechObject = this.add.text(64, 100, randomDuckSpeech);
+          speechObject = this.add.text(5, 130, randomDuckSpeech);
           
           this.time.delayedCall(3000, () => {
             if (speechObject) {
