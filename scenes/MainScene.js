@@ -76,12 +76,12 @@ export class MainScene extends Phaser.Scene {
           duck.y = 140;
           const randomDuckSpeech = duckQuotesArray[Math.floor(Math.random() * duckQuotesArray.length)];
           speechObject = this.add.rexBBCodeText(10, 5, randomDuckSpeech, {
-            wordWrap: {width: 145, useAdvancedWrap: true},
+            wordWrap: {width: 140, useAdvancedWrap: true},
             backgroundColor: '#ffffff',
             align: 'center',
             color: '#000000',
             fontFamily: 'Arial',
-            fontSize: '16px'
+            fontSize: '14px'
 
           });
           //
