@@ -84,7 +84,7 @@ export class MainScene extends Phaser.Scene {
             fontSize: '16px'
 
           });
-          
+          //
           this.time.delayedCall(3000, () => {
             if (speechObject) {
               speechObject.destroy();
